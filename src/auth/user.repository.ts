@@ -14,8 +14,9 @@ export class UserRepository extends Repository<User> {
   async signUp(credentialsDto: AuthCredentialsDto) {
     try {
       const { name, password } = credentialsDto;
-      const hash = await bcrypt.hash(password, 20);
+      const hash = await bcrypt.hash(password, 10);
       await User.create({ name, password: hash }).save();
+      return true;
     } catch (error) {
       if (error.code === '23505') {
         throw new ConflictException('User with this name already exists');
