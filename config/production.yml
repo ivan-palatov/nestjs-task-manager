@@ -1,0 +1,6 @@
+server:
+  logger: ['error']
+  origin: 'http://nestjs-task-manager-frontend.s3-website-eu-west-1.amazonaws.com'
+
+db:
+  synchronize: false

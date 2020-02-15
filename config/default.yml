@@ -1,0 +1,10 @@
+server:
+  port: 5000
+
+db:
+  type: 'postgres'
+  port: 5432
+  database: 'nestjs-task-manager'
+
+jwt:
+  expiresIn: 3600
